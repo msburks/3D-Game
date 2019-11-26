@@ -1,0 +1,947 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Scripts/HUB Test.gd" type="Script" id=1]
+[ext_resource path="res://Assets/HUB 1-1.png.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Samauri_2-1.png.png" type="Texture" id=3]
+[ext_resource path="res://Assets/OstrichSans-Heavy copy.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Gateway-1.png.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Time-1.png.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Mail the Bill WAV.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/OstrichSans-Medium copy.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scripts/RichTextLabel.gd" type="Script" id=10]
+[ext_resource path="res://Assets/poster-1.png.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Winner-1.png.png" type="Texture" id=12]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.321569, 0.0509804, 0.0509804, 1 )
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 20, 20 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.223529, 0.270588, 0.407843, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.713726, 0.611765, 0.137255, 1 )
+
+[sub_resource type="CubeMesh" id=10]
+material = SubResource( 9 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=11]
+data = PoolVector3Array( -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5 )
+
+[sub_resource type="Gradient" id=12]
+offsets = PoolRealArray( 0.214815, 0.881481 )
+colors = PoolColorArray( 0.178349, 0.19497, 0.616992, 1, 0.808398, 0.299992, 0.299992, 1 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+emission_shape = 2
+emission_box_extents = Vector3( 30, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+angular_velocity = 1.1042e+21
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 45.0
+scale = 25.0
+color_ramp = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 17
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 75
+font_data = ExtResource( 9 )
+
+[node name="Game" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="All Walls" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 10, 10 )
+
+[node name="Floor" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, 0, 10, -10 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor"]
+shape = SubResource( 4 )
+
+[node name="Wall" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, -1, 3.17865e-08, 0, -3.17865e-08, -1, 0, 20, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Wall"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Wall"]
+shape = SubResource( 5 )
+
+[node name="Wall Lvl 2" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, -1, 3.17865e-08, 0, -3.17865e-08, -1, 0, 20, 20 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Wall Lvl 2"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Wall Lvl 2"]
+shape = SubResource( 5 )
+
+[node name="Wall2" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Wall2"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Wall2"]
+shape = SubResource( 6 )
+
+[node name="Wall2 Lvl 2" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Wall2 Lvl 2"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Wall2 Lvl 2"]
+shape = SubResource( 6 )
+
+[node name="Wall3" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 1.19249e-08, -1.19249e-08, -4.37114e-08, 1, 10, 10, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 7.7647e-23, 0, 8.35188e-23, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Wall3"]
+shape = SubResource( 7 )
+
+[node name="Wall3 Lvl 2" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 1.19249e-08, -1.19249e-08, -4.37114e-08, 1, 10, 10, 20 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Wall3 Lvl 2"]
+transform = Transform( 1, 0, 0, 0, 1, 7.7647e-23, 0, 8.35188e-23, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Wall3 Lvl 2"]
+shape = SubResource( 7 )
+
+[node name="Wall4" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 1.19249e-08, 1, 4.37114e-08, -1, 1.19249e-08, 1.19249e-08, 1.19249e-08, -4.37114e-08, 1, -10, 10, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Wall4"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Wall4"]
+shape = SubResource( 8 )
+
+[node name="Wall4 Lvl 2" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 1.19249e-08, 1, 4.37114e-08, -1, 1.19249e-08, 1.19249e-08, 1.19249e-08, -4.37114e-08, 1, -10, 10, 20 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Wall4 Lvl 2"]
+transform = Transform( 1, 0, 0, 0, 1, 1.05914e-23, 0, 6.2159e-24, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Wall4 Lvl 2"]
+shape = SubResource( 8 )
+
+[node name="Floor 2" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, 0, -10, 30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2"]
+shape = SubResource( 6 )
+
+[node name="Floor 2 Wall 1" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( -4.37114e-08, -1, 0, 1.19249e-08, -5.21254e-16, -1, 1, -4.37114e-08, 1.19249e-08, 10, -10, 30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2 Wall 1"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2 Wall 1"]
+shape = SubResource( 6 )
+
+[node name="Floor 2 Wall 5" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( -4.37114e-08, -1, 0, 1.19249e-08, -5.21254e-16, -1, 1, -4.37114e-08, 1.19249e-08, 10, 10, 30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2 Wall 5"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2 Wall 5"]
+shape = SubResource( 6 )
+
+[node name="Floor 2 Wall 4" type="StaticBody" parent="All Walls"]
+transform = Transform( -4.37114e-08, 1, 0, -1.19249e-08, -5.21254e-16, -1, -1, -4.37114e-08, 1.19249e-08, -10, 10, 30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2 Wall 4"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2 Wall 4"]
+shape = SubResource( 6 )
+
+[node name="Floor 2 Wall 2" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( -4.37114e-08, 1, 0, -1.19249e-08, -5.21254e-16, -1, -1, -4.37114e-08, 1.19249e-08, -10, -10, 30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2 Wall 2"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2 Wall 2"]
+shape = SubResource( 6 )
+
+[node name="Floor 2 Wall 3" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 1.91069e-15, -4.37114e-08, 1, -5.56363e-08, 1, 4.37114e-08, -1, -5.56363e-08, -5.21254e-16, 0, -10, 30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2 Wall 3"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2 Wall 3"]
+shape = SubResource( 6 )
+
+[node name="Floor 2 Wall 7" type="StaticBody" parent="All Walls"]
+editor/display_folded = true
+transform = Transform( 4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 0, 20, 30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2 Wall 7"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2 Wall 7"]
+shape = SubResource( 6 )
+
+[node name="Floor 2 Wall 6" type="StaticBody" parent="All Walls"]
+transform = Transform( 1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, 10, 40 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2 Wall 6"]
+transform = Transform( 1, 0, 1.05879e-22, 0, 1, -1.65688e-23, 0, -1.65688e-23, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2 Wall 6"]
+shape = SubResource( 6 )
+
+[node name="Floor 2 Wall 8" type="StaticBody" parent="All Walls"]
+transform = Transform( 1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -10, 40 )
+
+[node name="MeshInstance" type="MeshInstance" parent="All Walls/Floor 2 Wall 8"]
+transform = Transform( 1, 0, 1.05879e-22, 0, 1, -1.65688e-23, 0, -1.65688e-23, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="All Walls/Floor 2 Wall 8"]
+shape = SubResource( 6 )
+
+[node name="Boxes" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="Box 1" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 1"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 1"]
+shape = SubResource( 11 )
+
+[node name="Box 2" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 2"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 2"]
+shape = SubResource( 11 )
+
+[node name="Box 3" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5.5, -5.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 3"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 3"]
+shape = SubResource( 11 )
+
+[node name="Box 4" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, -5.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 4"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 4"]
+shape = SubResource( 11 )
+
+[node name="Box 5" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5.5, -5.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 5"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 5"]
+shape = SubResource( 11 )
+
+[node name="Box 6" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 7.5, -1.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 6"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 6"]
+shape = SubResource( 11 )
+
+[node name="Box 7" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5.5, 1.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 7"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 7"]
+shape = SubResource( 11 )
+
+[node name="Box 8" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 7.5, 4.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 8"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 8"]
+shape = SubResource( 11 )
+
+[node name="Box 9" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8.5, 4.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 9"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 9"]
+shape = SubResource( 11 )
+
+[node name="Box 10" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 8.5, 9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 10"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 10"]
+shape = SubResource( 11 )
+
+[node name="Box 11" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8.5, 9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 11"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 11"]
+shape = SubResource( 11 )
+
+[node name="Box 12" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 11, 9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 12"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 12"]
+shape = SubResource( 11 )
+
+[node name="Box 13" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 13.5, 9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 13"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 13"]
+shape = SubResource( 11 )
+
+[node name="Box 14" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 8.5, 9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 14"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 14"]
+shape = SubResource( 11 )
+
+[node name="Box 15" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 11.5, 6.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 15"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 15"]
+shape = SubResource( 11 )
+
+[node name="Box 16" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 14.5, 3.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 16"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 16"]
+shape = SubResource( 11 )
+
+[node name="Box 17" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 11.5, -3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 17"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 17"]
+shape = SubResource( 11 )
+
+[node name="Box 18" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 11.5, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 18"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 18"]
+shape = SubResource( 11 )
+
+[node name="Box 19" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 14, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 19"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 19"]
+shape = SubResource( 11 )
+
+[node name="Box 20" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 14.5, -5.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 20"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 20"]
+shape = SubResource( 11 )
+
+[node name="Box 21" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 13, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 21"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 21"]
+shape = SubResource( 11 )
+
+[node name="Box 22" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 14.5, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 22"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 22"]
+shape = SubResource( 11 )
+
+[node name="Box 23" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 16, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 23"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 23"]
+shape = SubResource( 11 )
+
+[node name="Box 24" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 17.5, -4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 24"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 24"]
+shape = SubResource( 11 )
+
+[node name="Box 25" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 17.5, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 25"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 25"]
+shape = SubResource( 11 )
+
+[node name="Box 26" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 26"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 26"]
+shape = SubResource( 11 )
+
+[node name="Box 27" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.5, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 27"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 27"]
+shape = SubResource( 11 )
+
+[node name="Box 28" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, -4.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 28"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 28"]
+shape = SubResource( 11 )
+
+[node name="Box 29" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 29"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 29"]
+shape = SubResource( 11 )
+
+[node name="Box 30" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 26, 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 30"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 30"]
+shape = SubResource( 11 )
+
+[node name="Box 31" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 28, 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 31"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 31"]
+shape = SubResource( 11 )
+
+[node name="Box 32" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 30, 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 32"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 32"]
+shape = SubResource( 11 )
+
+[node name="Box 33" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 26, 9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 33"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 33"]
+shape = SubResource( 11 )
+
+[node name="Box 34" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 26, 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 34"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 34"]
+shape = SubResource( 11 )
+
+[node name="Box 35" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 26, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 35"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 35"]
+shape = SubResource( 11 )
+
+[node name="Box 36" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 28, -4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 36"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 36"]
+shape = SubResource( 11 )
+
+[node name="Box 37" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 30, -8 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 37"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 37"]
+shape = SubResource( 11 )
+
+[node name="Box 38" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 33, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 38"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 38"]
+shape = SubResource( 11 )
+
+[node name="Box 39" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34, -7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 39"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 39"]
+shape = SubResource( 11 )
+
+[node name="Box 40" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 33, -1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 40"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 40"]
+shape = SubResource( 11 )
+
+[node name="Box 41" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 35, -3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 41"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 41"]
+shape = SubResource( 11 )
+
+[node name="Box 42" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 37, -7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 42"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 42"]
+shape = SubResource( 11 )
+
+[node name="Box 43" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 40, -9.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 43"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 43"]
+shape = SubResource( 11 )
+
+[node name="Box 44" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 42, -6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 44"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 44"]
+shape = SubResource( 11 )
+
+[node name="Box 45" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 43, -1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 45"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 45"]
+shape = SubResource( 11 )
+
+[node name="Box 46" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 46"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 46"]
+shape = SubResource( 11 )
+
+[node name="Box 47" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 42, -1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 47"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 47"]
+shape = SubResource( 11 )
+
+[node name="Box 48" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 43, -2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 48"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 48"]
+shape = SubResource( 11 )
+
+[node name="Box 49" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 44, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 49"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 49"]
+shape = SubResource( 11 )
+
+[node name="Box 50" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 42, 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 50"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 50"]
+shape = SubResource( 11 )
+
+[node name="Box 51" type="StaticBody" parent="Boxes"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 42, 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 51"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Boxes/Box 51"]
+shape = SubResource( 11 )
+
+[node name="HUB" type="Node2D" parent="."]
+
+[node name="Bar" type="Sprite" parent="HUB"]
+position = Vector2( 539.464, 79.8626 )
+scale = Vector2( 0.973684, 0.534249 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect2" type="ColorRect" parent="HUB/Bar"]
+margin_left = -168.0
+margin_top = -106.0
+margin_right = -53.0
+margin_bottom = 125.0
+color = Color( 0.313726, 0.0509804, 0.0509804, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="HUB/Bar"]
+margin_left = -159.0
+margin_top = -90.0
+margin_right = -61.0
+margin_bottom = 105.0
+color = Color( 0.607843, 0.129412, 0.129412, 1 )
+
+[node name="Particles2D" type="Particles2D" parent="HUB/Bar"]
+show_behind_parent = true
+position = Vector2( -211.695, -51.1909 )
+rotation = 1.5708
+scale = Vector2( 1.07136, 1.4127 )
+amount = 75
+lifetime = 2.5
+process_material = SubResource( 14 )
+
+[node name="Kensi" type="Sprite" parent="HUB"]
+position = Vector2( 414.1, 89.2853 )
+scale = Vector2( 1.18733, 1.24423 )
+texture = ExtResource( 3 )
+
+[node name="MainMenu" type="Button" parent="HUB"]
+margin_left = 865.459
+margin_top = 35.4426
+margin_right = 951.459
+margin_bottom = 53.4426
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Main Menu"
+
+[node name="Gate" type="Sprite" parent="HUB"]
+position = Vector2( 955.446, 45.578 )
+rotation = 1.5708
+scale = Vector2( 0.300482, 0.460252 )
+texture = ExtResource( 5 )
+
+[node name="Gate3" type="Sprite" parent="HUB/Gate"]
+position = Vector2( -9.0731, 206.409 )
+rotation = 3.14159
+texture = ExtResource( 5 )
+
+[node name="Time" type="Sprite" parent="HUB"]
+position = Vector2( 603.527, 44.2146 )
+scale = Vector2( 0.444763, 0.569034 )
+texture = ExtResource( 6 )
+
+[node name="KinematicBody" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26718, 0 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = 0.5
+autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+editor/display_folded = true
+margin_left = 673.013
+margin_top = 17.0377
+margin_right = 897.013
+margin_bottom = 168.038
+custom_fonts/normal_font = SubResource( 16 )
+visible_characters = 5
+meta_underlined = false
+tab_size = 1
+script = ExtResource( 10 )
+
+[node name="Timer" type="Timer" parent="RichTextLabel"]
+autostart = true
+
+[node name="Start" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62117, 2.16618, -9.97265 )
+texture = ExtResource( 11 )
+
+[node name="Winner" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.330946, 44.8875, 19.9227 )
+flip_h = true
+pixel_size = 0.03
+texture = ExtResource( 12 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.107972, -0.984526, -0.138025, -0.24702, -0.161051, 0.955533, -0.962976, -0.0690757, -0.260587, 0, 49, -3.02972 )
+shadow_enabled = true
+[connection signal="pressed" from="HUB/MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="timeout" from="RichTextLabel/Timer" to="RichTextLabel" method="_on_Timer_timeout"]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Gallery.gd" type="Script" id=1]
+[ext_resource path="res://Assets/OstrichSans-Medium copy.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Bar-1.png.png" type="Texture" id=3]
+[ext_resource path="res://Assets/HUB 1-1.png.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Gateway-1.png.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Gypsy-1.png.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Samauri_2-1.png.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Spaceman-1.png.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Time-1.png.png" type="Texture" id=9]
+[ext_resource path="res://Assets/menu screen-1.png.png" type="Texture" id=10]
+[ext_resource path="res://Assets/l0_sprite_5 copy.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+outline_size = 7
+outline_color = Color( 0.321569, 0.0509804, 0.0509804, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -29.0
+margin_top = -20.0
+margin_right = 1047.0
+margin_bottom = 631.0
+color = Color( 0.223529, 0.270588, 0.407843, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 63.5527
+margin_top = 59.4525
+margin_right = 654.553
+margin_bottom = 255.452
+custom_fonts/font = SubResource( 1 )
+text = "Gallery"
+
+[node name="Bar" type="Sprite" parent="."]
+position = Vector2( 854.992, 406.942 )
+scale = Vector2( 0.425976, 0.53873 )
+texture = ExtResource( 3 )
+
+[node name="Bar2" type="Sprite" parent="."]
+position = Vector2( 811.327, 322.17 )
+scale = Vector2( 0.425976, 0.53873 )
+texture = ExtResource( 4 )
+
+[node name="Gate" type="Sprite" parent="."]
+position = Vector2( 273.666, 513.146 )
+scale = Vector2( 0.866745, 1.0205 )
+texture = ExtResource( 5 )
+
+[node name="G" type="Sprite" parent="."]
+position = Vector2( 948.391, 115.602 )
+scale = Vector2( 1.55388, 1.55391 )
+texture = ExtResource( 6 )
+
+[node name="K" type="Sprite" parent="."]
+position = Vector2( 596.345, 129.688 )
+scale = Vector2( 1.95176, 2.25055 )
+texture = ExtResource( 7 )
+
+[node name="S" type="Sprite" parent="."]
+position = Vector2( 794.066, 130.37 )
+scale = Vector2( 1.73657, 1.82787 )
+texture = ExtResource( 8 )
+
+[node name="Time" type="Sprite" parent="."]
+position = Vector2( 881, 529.025 )
+scale = Vector2( 0.897257, 1.0192 )
+texture = ExtResource( 9 )
+
+[node name="Dojo" type="Sprite" parent="."]
+position = Vector2( 570.037, 457.76 )
+scale = Vector2( 0.55348, 0.736011 )
+texture = ExtResource( 10 )
+
+[node name="Soldier" type="Sprite" parent="."]
+position = Vector2( 668.976, 506.215 )
+scale = Vector2( 0.82428, 1.00979 )
+texture = ExtResource( 11 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 32.5294
+margin_top = 536.059
+margin_right = 95.5294
+margin_bottom = 567.059
+text = "BACK"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
