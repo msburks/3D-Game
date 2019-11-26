@@ -284,7 +284,6 @@ material/0 = null
 shape = SubResource( 6 )
 
 [node name="Boxes" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Box 1" type="StaticBody" parent="Boxes"]
 editor/display_folded = true
@@ -693,8 +692,7 @@ material/0 = null
 shape = SubResource( 11 )
 
 [node name="Box 38" type="StaticBody" parent="Boxes"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 33, -9.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 32, -9.5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 38"]
 mesh = SubResource( 10 )
@@ -749,7 +747,7 @@ shape = SubResource( 11 )
 
 [node name="Box 43" type="StaticBody" parent="Boxes"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 40, -9.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 39, -9.5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 43"]
 mesh = SubResource( 10 )
@@ -760,7 +758,7 @@ shape = SubResource( 11 )
 
 [node name="Box 44" type="StaticBody" parent="Boxes"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 42, -6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 41.5, -6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Boxes/Box 44"]
 mesh = SubResource( 10 )
